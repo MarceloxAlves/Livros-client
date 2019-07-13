@@ -1,0 +1,26 @@
+<div class="container container-white">
+    <div style="text-align:center">
+    <h1>
+      Minhas compras
+    </h1>
+
+  </div>
+
+<br>
+<div class="row" style="padding-bottom:50px;">
+  <div *ngFor="let item of livros" class="card text-center col-3" >
+  <span class="card-img-top">
+    <span class="fa fa-book" style="font-size:50px; padding-top:10px;">
+    </span>
+  </span>
+  <div class="card-body">
+    <p class="card-text">{{item.titulo}}</p>
+    <small style="display:block"> Autor: {{item.autor}}</small>
+    <small style="display:block"> Ano: {{item.ano_escolar}}º</small>
+    <span class="badge badge-warning">R$ {{item.valor}}</span> <br><br>
+  </div>
+</div>
+</div>
+
+
+</div>

@@ -1,0 +1,77 @@
+<div class="container container-white">
+    <div style="text-align:center">
+    <h1>
+      Meus Livros
+    </h1>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Publicar Livro
+</button>
+
+  </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Publicar Livro</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-book"></i></span>
+						</div>
+						<input type="text" #titulo class="form-control" placeholder="titulo">
+					</div>
+
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input  #autor class="form-control" placeholder="autor">
+					</div>
+
+                    <div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-school"></i></span>
+						</div>
+						<input  #ano_escolar class="form-control" placeholder="Ano escolar">
+					</div>
+
+                    <div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fa fa-money"></i></span>
+						</div>
+						<input type="number" #valor class="form-control" placeholder="Valor">
+					</div>
+
+				</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
+        <button type="button" (click)="publicarLivro(titulo.value, autor.value, ano_escolar.value, valor.value)" class="btn btn-success" data-dismiss="modal">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row" style="padding-bottom:50px;">
+  <div *ngFor="let item of livros" class="card text-center col-3" >
+  <span class="card-img-top">
+    <span class="fa fa-book" style="font-size:50px; padding-top:10px;">
+    </span>
+  </span>
+  <div class="card-body">
+    <p class="card-text">{{item.titulo}}</p>
+    <small style="display:block"> Autor: {{item.autor}}</small>
+    <small style="display:block"> Ano: {{item.ano_escolar}}º</small>
+    <span class="badge badge-warning">R$ {{item.valor}}</span> <br><br>
+  </div>
+</div>
+</div>
+
+
+</div>
